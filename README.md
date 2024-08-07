@@ -27,3 +27,12 @@ Source: Federal Reserve Bank of St. Louis, NBER based Recession Indicators for t
 - T10Y3M represents the spread between 10-Year Treasury Constant Maturity and 3-Month Treasury Constant Maturity. When the value is positive, it means that the interest rate paid for the three-month t-bill is lower than the interest rate paid for the 10-year bond.
 
 Source: Federal Reserve Bank of St. Louis, 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity [T10Y3M], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/T10Y3M, August 5, 2024. 
+
+
+#### How to get data?
+
+- The data is provided by the Federal Reserve Bank of St. Louis and the `freadapi` library will be used to obtain it.
+
+- The library installation process is available at: https://pypi.org/project/fredapi/
+
+- An API key is required and can be created when logging into FRED.
