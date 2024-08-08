@@ -1,12 +1,31 @@
+---
+title: "Logistic regression model using Python"
+format: html
+---
 
-#packages
+Packages that will be used in data collection, data transformation and model building.
+
+```{python}
 from fredapi import Fred
 import numpy as np
 import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+```
 
+To build the model , we will collect data from the Federal Reserve website using api_key. We will use the yield curve and recession indicator data.
+
+
+```{python}
 #insert api_key from fred
 fred = Fred(api_key='insert api_key')
+```
 
+Montly data from each indicator will be used and we will transform the time series into a data frame.
+
+
+```{python}
 #get 10y data as pandas series freq = montly
 data_t10y3m = fred.get_series("T10Y3M", frequency = "m")
 
@@ -28,6 +47,12 @@ data_usrec = data_usrec.to_frame(name = 'recession')
 #rename index to date
 data_usrec = data_usrec.rename_axis("date")
 
+```
+
+Then we will merge the dataframe into one.
+
+
+```{python}
 #check results
 data_t10y3m.head(3)
 data_usrec.head(3)
@@ -41,6 +66,4 @@ data_rec = data_t10y3m.merge(
 #save data into csv file
 data_rec.to_csv("data_rec.csv")
 
-
-
-
+```
