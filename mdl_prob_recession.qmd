@@ -3,6 +3,17 @@ title: "Logistic regression model using Python"
 format: html
 ---
 
+### Goals
+
+- Import libraries such as pandas, scikit-learn, and numpy
+- Import data from FRED
+- Split the data into a training and testing sets using `train_test_split`
+- Create a logistic regression model using `LogisticRegression` 
+- Train the model on the training set
+- Make predictions in the testing set 
+- Evaluate the model using accuracy, classification report and confusion matrix
+- Make predictions on new data
+
 Packages that will be used in data collection, data transformation and model building.
 
 ```{python}
@@ -67,3 +78,4 @@ data_rec = data_t10y3m.merge(
 data_rec.to_csv("data_rec.csv")
 
 ```
+
